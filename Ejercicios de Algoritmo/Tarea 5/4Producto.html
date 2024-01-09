@@ -1,0 +1,21 @@
+<script>
+    let num, suma_pares = 0
+    let prod_impares = 1
+
+    do {
+        num = Number(prompt('Ingrese un numero'))
+
+        if (num !== 0) { // Agregamos esta condición para evitar que se procese el número 0
+            if (num % 2 === 0) {
+                suma_pares += num
+            } else {
+                prod_impares *= num
+            }
+        }
+    } while (num !== 0)
+
+    document.write('Producto de impares: ', prod_impares, '<br>')
+    console.log('Producto de impares: ', prod_impares)
+    document.write('Suma de pares: ', suma_pares, '<br>')
+    console.log('Suma de pares: ', suma_pares)
+</script>

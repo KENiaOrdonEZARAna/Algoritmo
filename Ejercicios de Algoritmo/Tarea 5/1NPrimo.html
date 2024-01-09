@@ -1,0 +1,22 @@
+<script>
+
+    // Desarrolle un algoritmo que permita leer un valor entero positivo N y determinar si es
+    // primo o no.
+
+    let num = Number(prompt('ingrese un numero'))
+    let c = 2
+
+    while (num % c != 0 && num > 1) {
+        c++
+    }
+    if (c == num) {
+        document.write(num, ' es primo')
+        console.log(num, ' es primo')
+    } else {
+        document.write(num, ' No es primo')
+        console.log(num, ' No es primo')
+    }
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<script>
+    //Inicialización de Varibles, Un bucle while se utiliza para iterar hasta que se encuentre un número de Fibonacci con más de 1000 divisores,
+    //Luego se incremnta con i++  función toma un número como parámetro y cuenta sus divisores
+    //Después de salir del bucle while, se imprime el resultado en el documento y en la consola
+   
+   
+   let a = 1, b = 1, c = 0, i = 2;
+   let numDivisores = 0;
+   
+       while (numDivisores <= 1000) {
+           c = a + b;
+           a = b;
+           b = c;
+           i++;
+   
+           numDivisores = contarDivisores(c);
+       }
+   
+       document.write('El primer número de Fibonacci con más de 1000 divisores es: ', c, '<br>');
+       console.log('El primer número de Fibonacci con más de 1000 divisores es: ', c);
+   
+       function contarDivisores(numero) {
+   let conteoDivisores = 0;
+   
+   
+           //Math.sqrt lo uso por eficiencia, para saber si un numero es dibisible basta con sacar la raiz del mismo -Buscar la raiz y reducir el rango de busqueda
+           for (let j = 1; j <= Math.sqrt(numero); j++) {
+               if (numero % j === 0) {
+                   conteoDivisores += 2; // Contamos ambos divisores (j y numero/j) se usa J para saber si es divisor de numero sino es se incremnta 
+   
+                   if (j === numero / j) {
+                       conteoDivisores--;
+                   }
+               }
+           }
+   
+           return conteoDivisores;
+       }
+   </script>

@@ -1,0 +1,40 @@
+<script>
+    // 
+   
+   
+   
+   
+   function estimarTiempoEntrega(distancia) {
+       // Definir los rangos y días de entrega asociados
+       const rangos = [100, 200, 300, 400, 500]; // Puedes agregar más rangos según sea necesario
+       const diasDeEntrega = [0, 1, 1, 2, 3]; // Días de entrega asociados a cada rango
+   
+       // Inicializar el tiempo de entrega
+       let tiempoEntrega = 0;
+   
+       // Calcular el tiempo de entrega basado en la distancia
+       for (let i = 0; i < rangos.length; i++) {
+           if (distancia < rangos[i]) {
+               tiempoEntrega += diasDeEntrega[i];
+               break; // Se encontró el rango, salir del bucle
+           } else {
+               tiempoEntrega += diasDeEntrega[i];
+           }
+       }
+   
+       return tiempoEntrega;
+   }
+   
+   // Ejemplo de uso
+   let distanciaAleatoria = Math.floor(Math.random() * 2000); // Generar una distancia aleatoria entre 0 y 2000 km cada vez en entras
+   let tiempoEstimado = estimarTiempoEntrega(distanciaAleatoria);
+   
+   console.log(`Distancia: ${distanciaAleatoria} km`);
+   console.log(`Tiempo estimado de entrega: ${tiempoEstimado} días`);
+   document.write(`Distancia: ${distanciaAleatoria} km <br>`);
+   document.write(`Tiempo estimado de entrega: ${tiempoEstimado} días`);
+   
+   
+   
+   
+   </script>

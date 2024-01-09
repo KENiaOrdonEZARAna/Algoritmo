@@ -1,0 +1,41 @@
+<script>
+    let a = 1, b = 1, c = 0, i = 2;
+    let numDivisores = 0;
+
+    while (numDivisores <= 1000) {
+        c = a + b;
+        a = b;
+        b = c;
+        i++;
+
+        numDivisores = contarDivisores(c);
+    }
+
+    document.write('El primer número de Fibonacci con más de 1000 divisores es: ', c, '<br>');
+    console.log('El primer número de Fibonacci con más de 1000 divisores es: ', c);
+
+    function contarDivisores(numero) {
+        let conteoDivisores = 0;
+
+        document.write('Divisores de ', numero, ': ');
+
+        for (let j = 1; j <= Math.sqrt(numero); j++) {
+            if (numero % j === 0) {
+                conteoDivisores += 2; // Contamos ambos divisores (j y numero/j)
+
+                if (j === numero / j) {
+                    conteoDivisores--;
+                }
+
+                document.write(j, ' ');
+                if (j !== numero / j) {
+                    document.write(numero / j, ' ');
+                }
+            }
+        }
+
+        document.write('<br>');
+
+        return conteoDivisores;
+    }
+</script>

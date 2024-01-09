@@ -1,0 +1,36 @@
+<script>
+    // Texto dado 
+    //Esta función toma una cadena como entrada y devuelve true si es
+    //un palíndromo (se lee igual al derecho y al revés), y false en caso contrario
+    //para convertir la cadena en un array de caracteres, luego invierte ese array con reverse
+    //() y finalmente lo une de nuevo en una cadena con join(''). La comparación verifica si 
+    //la cadena original es igual a su versión invertida.
+    
+    
+    let texto = "afoolishconsistencyisthehobgoblinoflittlemindsadoredbylittlestatesmenandphilosophersanddivineswithconsistencyagreatsoulhassimplynothingtodohemayaswellconcernhimselfwithhisshadowonthewallspeakwhatyouthinknowinhardwordsandtomorrowspeakwhattomorrowthinksinhardwordsagainthoughitcontradicteverythingyousaidtodayahsoyoushallbesuretobemisunderstoodisitsobadthentobemisunderstoodpythagoraswasmisunderstoodandsocratesandjesusandlutherandcopernicusandgalileoandnewtonandeverypureandwisespiritthatevertookfleshtobegreatistobemisunderstood";
+    
+    // Función para verificar si una cadena es igual al revés
+    function esPalindromo(cadena) {
+        return cadena === cadena.split('').reverse().join('');
+    }
+    
+    // Buscar palíndromos texto.length devuelve la cantidad total de caracteres en la cadena de texto
+    let palindromosEncontrados = [];
+    for (let i = 0; i < texto.length; i++) {
+        for (let j = i + 1; j < texto.length; j++) {
+            let subcadena = texto.substring(i, j);
+            if (esPalindromo(subcadena)) {
+                palindromosEncontrados.push(subcadena);
+            }
+        }
+    }
+    
+    // Mostrar los resultados en la consola y en el documento
+    console.log('Palíndromos encontrados:', palindromosEncontrados);
+    document.write('Palíndromos encontrados: ', palindromosEncontrados.join(', '), '<br>');
+    
+    
+    
+    
+    </script>
+    
